@@ -13,6 +13,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		8E49B63420D140FF002D68BA /* CameraHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E49B63320D140FE002D68BA /* CameraHelper.swift */; };
+		8E49B63720D14181002D68BA /* PhotoCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E49B63620D14181002D68BA /* PhotoCropViewController.swift */; };
 		AF3A3DFE07274436C022F17A /* Pods_RACameraHelper_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B26BB9B3BAF3E7A5752D50CB /* Pods_RACameraHelper_Example.framework */; };
 		D7F35B7C85292CBE158D14B6 /* Pods_RACameraHelper_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543922C22F3A7D4871962A41 /* Pods_RACameraHelper_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -29,10 +31,10 @@
 
 /* Begin PBXFileReference section */
 		07FCF7D9AD5DFEE64CADEED4 /* Pods-RACameraHelper_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACameraHelper_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RACameraHelper_Tests/Pods-RACameraHelper_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		0F391E72C83D4F4316214F0A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0F391E72C83D4F4316214F0A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		2632A718045F94221AE02814 /* Pods-RACameraHelper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACameraHelper_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-RACameraHelper_Example/Pods-RACameraHelper_Example.release.xcconfig"; sourceTree = "<group>"; };
 		2DCF415C210CA1170F9903F0 /* Pods-RACameraHelper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACameraHelper_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RACameraHelper_Example/Pods-RACameraHelper_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		53F91360BB561DA1E6CCD9B3 /* RACameraHelper.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = RACameraHelper.podspec; path = ../RACameraHelper.podspec; sourceTree = "<group>"; };
+		53F91360BB561DA1E6CCD9B3 /* RACameraHelper.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RACameraHelper.podspec; path = ../RACameraHelper.podspec; sourceTree = "<group>"; };
 		543922C22F3A7D4871962A41 /* Pods_RACameraHelper_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACameraHelper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* RACameraHelper_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RACameraHelper_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,7 +46,9 @@
 		607FACE51AFB9204008FA782 /* RACameraHelper_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RACameraHelper_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7A0355E8A58826A5DD72A9E8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		7A0355E8A58826A5DD72A9E8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		8E49B63320D140FE002D68BA /* CameraHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelper.swift; sourceTree = "<group>"; };
+		8E49B63620D14181002D68BA /* PhotoCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCropViewController.swift; sourceTree = "<group>"; };
 		B26BB9B3BAF3E7A5752D50CB /* Pods_RACameraHelper_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACameraHelper_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1C12843C6CDDB80F712A19 /* Pods-RACameraHelper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACameraHelper_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RACameraHelper_Tests/Pods-RACameraHelper_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,9 +143,19 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		8E49B63520D14167002D68BA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8E49B63320D140FE002D68BA /* CameraHelper.swift */,
+				8E49B63620D14181002D68BA /* PhotoCropViewController.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		BAC4C23B03609950DE56366E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				8E49B63520D14167002D68BA /* Classes */,
 				2DCF415C210CA1170F9903F0 /* Pods-RACameraHelper_Example.debug.xcconfig */,
 				2632A718045F94221AE02814 /* Pods-RACameraHelper_Example.release.xcconfig */,
 				07FCF7D9AD5DFEE64CADEED4 /* Pods-RACameraHelper_Tests.debug.xcconfig */,
@@ -323,7 +337,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				8E49B63720D14181002D68BA /* PhotoCropViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				8E49B63420D140FF002D68BA /* CameraHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
