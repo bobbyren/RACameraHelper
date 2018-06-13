@@ -48,6 +48,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="button" destination="Ewn-Dv-ftb" id="hpd-Vc-Krf"/>
                         <outlet property="photoView" destination="LEM-9b-ODx" id="34i-Dx-nPr"/>
                         <segue destination="pT1-0K-aj2" kind="show" identifier="toEditPhoto" id="Kwn-oD-tpm"/>
                     </connections>

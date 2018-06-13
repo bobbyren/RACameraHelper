@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var button: UIButton!
     let cameraHelper = CameraHelper()
     var selectedImage: UIImage?
     
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         cameraHelper.delegate = self
+        button.setTitle("Add Photo", for: .normal)
     }
 
     @IBAction func didClickButton(_ sender: Any?) {
@@ -53,6 +55,7 @@ extension ViewController: CameraHelperDelegate {
 extension ViewController: PhotoCropDelegate {
     func didFinishEditing(photo: UIImage?) {
         photoView.image = photo
+        button.setTitle(nil, for: .normal)
         dismiss(animated: true, completion: nil)
     }
     
