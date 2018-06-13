@@ -21,7 +21,7 @@ class PhotoCropViewController: UIViewController {
     weak var delegate: PhotoCropDelegate?
     private lazy var __once: () = {
         // sets up scrollview only once
-        setupScrollView()
+        self.setupScrollView()
     }()
     
     var image: UIImage? {
