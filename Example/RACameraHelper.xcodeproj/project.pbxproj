@@ -78,6 +78,7 @@
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for RACameraHelper */,
+				8E49B63520D14167002D68BA /* Classes */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				BAC4C23B03609950DE56366E /* Pods */,
@@ -155,7 +156,6 @@
 		BAC4C23B03609950DE56366E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8E49B63520D14167002D68BA /* Classes */,
 				2DCF415C210CA1170F9903F0 /* Pods-RACameraHelper_Example.debug.xcconfig */,
 				2632A718045F94221AE02814 /* Pods-RACameraHelper_Example.release.xcconfig */,
 				07FCF7D9AD5DFEE64CADEED4 /* Pods-RACameraHelper_Tests.debug.xcconfig */,
