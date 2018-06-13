@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RACameraHelper_Example' do
+  pod 'RACameraHelper', :path => '../'
+
+  target 'RACameraHelper_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
