@@ -28,6 +28,9 @@ class ViewController: UIViewController {
         guard let controller = segue.destination as? PhotoCropViewController else { return }
         controller.image = selectedImage
         controller.delegate = self
+        dismiss(animated: true) {
+            self.present(controller, animated: true)
+        }
     }
 }
 
@@ -38,6 +41,7 @@ extension ViewController: CameraHelperDelegate {
     
     func didCancelPicker() {
         print("Did not select image")
+        dismiss(animated: true, completion: nil)
     }
     
     func didSelectPhoto(selected: UIImage?) {
@@ -49,6 +53,7 @@ extension ViewController: CameraHelperDelegate {
 extension ViewController: PhotoCropDelegate {
     func didFinishEditing(photo: UIImage?) {
         photoView.image = photo
+        dismiss(animated: true, completion: nil)
     }
     
     
