@@ -10,17 +10,47 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var photoView: UIImageView!
     let cameraHelper = CameraHelper()
+    var selectedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        cameraHelper.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func didClickButton(_ sender: Any?) {
+        cameraHelper.takeOrSelectPhoto(from: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let controller = segue.destination as? PhotoCropViewController else { return }
+        controller.image = selectedImage
+        controller.delegate = self
+    }
+}
 
+extension ViewController: CameraHelperDelegate {
+    func didCancelSelection() {
+        print("Did not edit image")
+    }
+    
+    func didCancelPicker() {
+        print("Did not select image")
+    }
+    
+    func didSelectPhoto(selected: UIImage?) {
+        selectedImage = selected
+        performSegue(withIdentifier: "toEditPhoto", sender: nil)
+    }
+}
+
+extension ViewController: PhotoCropDelegate {
+    func didFinishEditing(photo: UIImage?) {
+        photoView.image = photo
+    }
+    
+    
 }
 

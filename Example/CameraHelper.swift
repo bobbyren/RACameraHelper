@@ -16,11 +16,11 @@ protocol CameraHelperDelegate: class {
 }
 
 class CameraHelper: NSObject {
-    var root: UIViewController!
+    weak var rootViewController: UIViewController?
     weak var delegate: CameraHelperDelegate?
     fileprivate var sourceIsCamera: Bool = false
     
-    func takeOrSelectPhoto() {
+    func takeOrSelectPhoto(from root: UIViewController) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             alert.addAction(UIAlertAction(title: "Take a New Photo", style: .default, handler: { (action) in
@@ -33,6 +33,7 @@ class CameraHelper: NSObject {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             self.delegate?.didCancelSelection()
         })
+        rootViewController = root
         root.present(alert, animated: true, completion: nil)
     }
 }
@@ -54,7 +55,7 @@ extension CameraHelper {
             picker.showsCameraControls = true
             picker.cameraDevice = .front
             
-            root.present(picker, animated: true)
+            rootViewController?.present(picker, animated: true)
         } else {
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 picker.sourceType = .photoLibrary
@@ -65,7 +66,7 @@ extension CameraHelper {
             picker.navigationBar.isTranslucent = false
             
             PHPhotoLibrary.requestAuthorization { (status) in
-                self.root.present(picker, animated: true)
+                self.rootViewController?.present(picker, animated: true)
             }
         }
     }
