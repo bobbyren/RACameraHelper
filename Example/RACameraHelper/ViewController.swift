@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RACameraHelper
 
 class ViewController: UIViewController {
 
