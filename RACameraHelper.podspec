@@ -32,9 +32,9 @@ DESC
 
   s.source_files = 'RACameraHelper/Classes/**/*'
   s.swift_version = '3.3'
-   s.resource_bundles = {
-     'RACameraHelper' => ['RACameraHelper/Assets/*.{storyboard}']
-   }
+  s.resource_bundles = {
+    'RACameraHelper' => ['RACameraHelper/Assets/**/*.{storyboard}']
+  }
 
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
