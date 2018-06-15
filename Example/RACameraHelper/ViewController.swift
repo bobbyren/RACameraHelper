@@ -21,12 +21,6 @@ class ViewController: UIViewController {
         
         cameraHelper.delegate = self
         button.setTitle("Add Photo", for: .normal)
-        
-        let frameworkBundle = Bundle(for: PhotoCropViewController.self)
-        let bundleURL = frameworkBundle.path(forResource: "RACameraHelper", ofType: "bundle")
-        let resourceBundle = Bundle(url: URL(fileURLWithPath: bundleURL!))
-        guard let nav = UIStoryboard(name: "RACameraHelper", bundle: resourceBundle).instantiateInitialViewController() as? UINavigationController, let controller = nav.viewControllers[0] as? PhotoCropViewController else { return }
-        print("done")
     }
 
     @IBAction func didClickButton(_ sender: Any?) {
@@ -47,8 +41,8 @@ extension ViewController: CameraHelperDelegate {
     func didSelectPhoto(selected: UIImage?) {
         selectedImage = selected
         let frameworkBundle = Bundle(for: PhotoCropViewController.self)
-        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("RACameraHelper.bundle")
-        let resourceBundle = Bundle(url: bundleURL!)
+        let bundleURL = frameworkBundle.path(forResource: "RACameraHelper", ofType: "bundle")
+        let resourceBundle = Bundle(url: URL(fileURLWithPath: bundleURL!))
         guard let nav = UIStoryboard(name: "RACameraHelper", bundle: resourceBundle).instantiateInitialViewController() as? UINavigationController, let controller = nav.viewControllers[0] as? PhotoCropViewController else { return }
         controller.image = self.selectedImage
         controller.delegate = self
