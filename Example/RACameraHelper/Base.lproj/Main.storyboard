@@ -48,20 +48,11 @@
                     <connections>
                         <outlet property="button" destination="Ewn-Dv-ftb" id="hpd-Vc-Krf"/>
                         <outlet property="photoView" destination="LEM-9b-ODx" id="34i-Dx-nPr"/>
-                        <segue destination="E4m-no-qgF" kind="presentation" identifier="toEditPhoto" id="JlP-Rg-31f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="132.68365817091455"/>
-        </scene>
-        <!--RACameraHelper-->
-        <scene sceneID="dQd-nj-fp5">
-            <objects>
-                <viewControllerPlaceholder storyboardName="RACameraHelper" id="E4m-no-qgF" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7tQ-21-mYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="801" y="37"/>
         </scene>
     </scenes>
 </document>
