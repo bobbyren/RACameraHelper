@@ -28,12 +28,9 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let controller = segue.destination as? PhotoCropViewController else { return }
+        guard let nav = segue.destination as? UINavigationController, let controller = nav.viewControllers[0] as? PhotoCropViewController else { return }
         controller.image = selectedImage
         controller.delegate = self
-        dismiss(animated: true) {
-            self.present(controller, animated: true)
-        }
     }
 }
 
