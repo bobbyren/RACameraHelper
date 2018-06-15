@@ -9,13 +9,13 @@
 import UIKit
 import Photos
 
-protocol CameraHelperDelegate: class {
+public protocol CameraHelperDelegate: class {
     func didCancelSelection() // album or camera
     func didCancelPicker() // cancel from picker
     func didSelectPhoto(selected: UIImage?)
 }
 
-class CameraHelper: NSObject {
+public class CameraHelper: NSObject {
     weak var rootViewController: UIViewController?
     weak var delegate: CameraHelperDelegate?
     fileprivate var sourceIsCamera: Bool = false
@@ -75,12 +75,12 @@ extension CameraHelper {
 
 // MARK: Photo selection
 extension CameraHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let original = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
         delegate?.didSelectPhoto(selected: original)
     }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         delegate?.didCancelPicker()
     }
 }

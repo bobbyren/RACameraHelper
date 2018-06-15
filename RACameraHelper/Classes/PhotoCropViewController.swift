@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol PhotoCropDelegate: class {
+public protocol PhotoCropDelegate: class {
     func didFinishEditing(photo: UIImage?)
 }
 
-class PhotoCropViewController: UIViewController {
+public class PhotoCropViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var cropView: UIView!
@@ -31,7 +31,7 @@ class PhotoCropViewController: UIViewController {
             }
         }
     }
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
         
@@ -40,7 +40,7 @@ class PhotoCropViewController: UIViewController {
         cropView.layer.borderColor = UIColor(white: 1, alpha: 1).cgColor
     }
     
-    override func viewDidLayoutSubviews() {
+    override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let _ = __once
     }
@@ -141,7 +141,7 @@ class PhotoCropViewController: UIViewController {
 }
 
 extension PhotoCropViewController: UIScrollViewDelegate {
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+    public func scrollViewDidZoom(_ scrollView: UIScrollView) {
         if scrollView.zoomScale < scrollView.minimumZoomScale {
             scrollView.zoomScale = scrollView.minimumZoomScale
         }
@@ -152,7 +152,7 @@ extension PhotoCropViewController: UIScrollViewDelegate {
         updateContentSize()
     }
     
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+    public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return photoView
     }
 }
