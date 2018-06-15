@@ -60,7 +60,7 @@
         <!--Photo Crop View Controller-->
         <scene sceneID="JaH-0f-Csc">
             <objects>
-                <viewController storyboardIdentifier="PhotoCropViewController" id="pT1-0K-aj2" customClass="PhotoCropViewController" customModule="SQDDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoCropViewController" id="pT1-0K-aj2" customClass="PhotoCropViewController" customModule="RACameraHelper_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oWL-X2-Bch">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,7 +150,6 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
-                        <outlet property="buttonSelect" destination="3sF-qm-7c9" id="6eN-5V-YQf"/>
                         <outlet property="cropView" destination="MHq-jj-VSd" id="x31-0s-ghQ"/>
                         <outlet property="photoView" destination="cI3-Ze-YXJ" id="R7f-O7-V6e"/>
                         <outlet property="scrollView" destination="hpc-ld-QZ6" id="WpY-pj-0gu"/>

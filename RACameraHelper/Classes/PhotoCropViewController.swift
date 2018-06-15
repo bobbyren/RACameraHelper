@@ -16,7 +16,6 @@ public class PhotoCropViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var cropView: UIView!
-    @IBOutlet weak var buttonSelect: UIButton!
     
     public weak var delegate: PhotoCropDelegate?
     private lazy var __once: () = {

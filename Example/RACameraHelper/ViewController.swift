@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RACameraHelper
 
 class ViewController: UIViewController {
 
@@ -48,7 +49,9 @@ extension ViewController: CameraHelperDelegate {
     
     func didSelectPhoto(selected: UIImage?) {
         selectedImage = selected
-        performSegue(withIdentifier: "toEditPhoto", sender: nil)
+        dismiss(animated: true) {
+            self.performSegue(withIdentifier: "toEditPhoto", sender: nil)
+        }
     }
 }
 
