@@ -18,13 +18,13 @@ public class PhotoCropViewController: UIViewController {
     @IBOutlet weak var cropView: UIView!
     @IBOutlet weak var buttonSelect: UIButton!
     
-    weak var delegate: PhotoCropDelegate?
+    public weak var delegate: PhotoCropDelegate?
     private lazy var __once: () = {
         // sets up scrollview only once
         self.setupScrollView()
     }()
     
-    var image: UIImage? {
+    public var image: UIImage? {
         didSet {
             if let photoView = photoView {
                 photoView.image = image

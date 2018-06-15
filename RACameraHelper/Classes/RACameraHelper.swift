@@ -17,10 +17,10 @@ public protocol CameraHelperDelegate: class {
 
 public class CameraHelper: NSObject {
     weak var rootViewController: UIViewController?
-    weak var delegate: CameraHelperDelegate?
+    public weak var delegate: CameraHelperDelegate?
     fileprivate var sourceIsCamera: Bool = false
     
-    func takeOrSelectPhoto(from root: UIViewController) {
+    public func takeOrSelectPhoto(from root: UIViewController) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             alert.addAction(UIAlertAction(title: "Take a New Photo", style: .default, handler: { (action) in
