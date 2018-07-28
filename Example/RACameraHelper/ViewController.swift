@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var button: UIButton!
     let cameraHelper = CameraHelper()
-    var selectedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didClickButton(_ sender: Any?) {
-        cameraHelper.takeOrSelectPhoto(from: self)
+        cameraHelper.takeOrSelectPhoto(from: self, fromView: button)
     }
 }
 
@@ -39,12 +38,11 @@ extension ViewController: CameraHelperDelegate {
     }
     
     func didSelectPhoto(selected: UIImage?) {
-        selectedImage = selected
         let frameworkBundle = Bundle(for: PhotoCropViewController.self)
         let bundleURL = frameworkBundle.path(forResource: "RACameraHelper", ofType: "bundle")
         let resourceBundle = Bundle(url: URL(fileURLWithPath: bundleURL!))
         guard let nav = UIStoryboard(name: "RACameraHelper", bundle: resourceBundle).instantiateInitialViewController() as? UINavigationController, let controller = nav.viewControllers[0] as? PhotoCropViewController else { return }
-        controller.image = self.selectedImage
+        controller.image = selected
         controller.delegate = self
         dismiss(animated: true) {
             self.present(nav, animated: true, completion: nil)

@@ -20,7 +20,7 @@ public class CameraHelper: NSObject {
     public weak var delegate: CameraHelperDelegate?
     fileprivate var sourceIsCamera: Bool = false
     
-    public func takeOrSelectPhoto(from root: UIViewController) {
+    public func takeOrSelectPhoto(from root: UIViewController, fromView: UIView? = nil) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             alert.addAction(UIAlertAction(title: "Take a New Photo", style: .default, handler: { (action) in
@@ -34,7 +34,18 @@ public class CameraHelper: NSObject {
             self.delegate?.didCancelSelection()
         })
         rootViewController = root
+
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
+            if let view = fromView {
+                alert.popoverPresentationController?.sourceView = view
+                alert.popoverPresentationController?.sourceRect = view.frame
+            } else {
+                alert.popoverPresentationController?.sourceView = root.view
+                alert.popoverPresentationController?.sourceRect = root.view.frame
+            }
+        }
         root.present(alert, animated: true, completion: nil)
+
     }
 }
 
