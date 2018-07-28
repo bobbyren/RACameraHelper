@@ -37,7 +37,7 @@ public class CameraHelper: NSObject {
 
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad) {
             if let view = fromView {
-                alert.popoverPresentationController?.sourceView = view
+                alert.popoverPresentationController?.sourceView = view.superview ?? view
                 alert.popoverPresentationController?.sourceRect = view.frame
             } else {
                 alert.popoverPresentationController?.sourceView = root.view
