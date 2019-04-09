@@ -87,8 +87,8 @@ extension CameraHelper {
 // MARK: Photo selection
 extension CameraHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let original = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
-        delegate?.didSelectPhoto(selected: original)
+//        guard let original = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+//        delegate?.didSelectPhoto(selected: original)
     }
     
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

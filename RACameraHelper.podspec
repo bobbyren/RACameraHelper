@@ -31,7 +31,7 @@ DESC
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'RACameraHelper/Classes/**/*'
-  s.swift_version = '3.3'
+  s.swift_version = '4.2'
   s.resource_bundles = {
     'RACameraHelper' => ['RACameraHelper/Assets/**/*.{storyboard}']
   }
