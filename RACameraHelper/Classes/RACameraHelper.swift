@@ -77,7 +77,9 @@ extension CameraHelper {
             picker.navigationBar.isTranslucent = false
             
             PHPhotoLibrary.requestAuthorization { (status) in
-                self.rootViewController?.present(picker, animated: true)
+                DispatchQueue.main.async {
+                    self.rootViewController?.present(picker, animated: true)
+                }
             }
         }
     }
