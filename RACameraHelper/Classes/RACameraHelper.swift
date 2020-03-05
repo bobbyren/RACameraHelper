@@ -20,11 +20,11 @@ public class CameraHelper: NSObject {
     public weak var delegate: CameraHelperDelegate?
     fileprivate var sourceIsCamera: Bool = false
     
-    public func takeOrSelectPhoto(from root: UIViewController, fromView: UIView? = nil) {
+    public func takeOrSelectPhoto(from root: UIViewController, fromView: UIView? = nil, frontFacing: Bool = false) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             alert.addAction(UIAlertAction(title: "Take a New Photo", style: .default, handler: { (action) in
-                self.selectPhotoSource(camera: true)
+                self.selectPhotoSource(camera: true, front: frontFacing)
             }))
         }
         alert.addAction(UIAlertAction(title: "Choose an Existing Photo", style: .default, handler: { (action) in
@@ -51,7 +51,7 @@ public class CameraHelper: NSObject {
 
 // MARK: Camera
 extension CameraHelper {
-    fileprivate func selectPhotoSource(camera: Bool) {
+    fileprivate func selectPhotoSource(camera: Bool, front: Bool = false) {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = false
@@ -64,7 +64,7 @@ extension CameraHelper {
             picker.sourceType = .camera
             picker.cameraCaptureMode = .photo
             picker.showsCameraControls = true
-            picker.cameraDevice = .front
+            picker.cameraDevice = front ? .front : .rear
             
             rootViewController?.present(picker, animated: true)
         } else {
