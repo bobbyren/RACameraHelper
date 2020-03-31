@@ -57,7 +57,7 @@ extension CameraHelper {
         picker.allowsEditing = false
         sourceIsCamera = camera
         
-        picker.view.backgroundColor = .blue
+        picker.view.backgroundColor = .clear
         UIApplication.shared.isStatusBarHidden = false
         
         if camera, UIImagePickerController.isSourceTypeAvailable(.camera) {
